@@ -1,3 +1,3 @@
 # first-program
-name= input("Enter your name:")
-print(f"Hello, {name}" )#string formatiing
+age= int(input("Enter your age:")) #casting from str to int
+print(type(age)) # to know which data type
