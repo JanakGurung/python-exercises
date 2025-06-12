@@ -1,0 +1,11 @@
+# Create a simple conversation with your program with a minimum of 5 questions and responses. 
+question1= input("What is your name?")
+print(f"Hello {question1}.")
+question2= input("What is it you are studying?")
+print(f"{question2} is interesting")
+question3= int(input("When does the class start?"))
+print(f"{question3} that's great")
+question4= input("What did you learn today?")
+print(f"{question4} is an amazing language.")
+question5= input("When is your holiday?")
+print(f"{question5} wow, have fun.")
