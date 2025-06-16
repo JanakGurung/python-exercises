@@ -1,11 +1,22 @@
-#list #tuple #set #dictionary
-my_list=["ankit","janak","sunil","ankit"]
-my_tuple=("ankit","janak","sunil")
-my_set={"ankit","janak","sunil"}
-my_dict={"ankit":1,"janak":2,"sunil":3,"ankit":3}
-my_dict["vishnu"]=4
-my_list[2]="ankit"
-my_dict['ankit']=15
-print(my_list)
-print(my_set)
-print(my_dict)
+# write a program to check the sum of two numbers provided by useer is even or not using functions.
+def add(a,b):
+    return a+b
+    
+def check_even(number):
+    if number %2== 0 :
+        return True
+    else:
+        return False
+    
+#TODO ask two numbers form users
+first_number= int(input("Enter first number\n"))
+second_number =int(input("Enter second number\n"))  
+
+#TODO find the sum using add function
+sum= add(first_number, second_number)   
+
+#TODO check if the sum is even or not
+if check_even(sum):
+    print("even")
+else:
+    print("odd")
