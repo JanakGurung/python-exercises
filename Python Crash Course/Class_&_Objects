@@ -10,14 +10,13 @@ class Restaurant:
     def open_restaurant(self):
         print(f"{self.restaurant_name} is now open.")    
     
-    #TODO instance of the class
-    restaurant = restaurant ("Gurung_khaja_ghar", "local")
-    
-    #TODO print the two attributes individually
-    print(restaurant.restaurant_name)
-    print(restaurant.cuisine_type)
-    
-    #TODO calll the methods
-    restaurant.describe_restaurant()
-    restaurant.open_restaurant()
-        
+#TODO instance of the class
+restaurant = Restaurant("Gurung_khaja_ghar", "local")
+
+#TODO print the two attributes individually
+print(restaurant.restaurant_name)
+print(restaurant.cuisine_type)
+
+#TODO calll the methods
+restaurant.describe_restaurant()
+restaurant.open_restaurant()
