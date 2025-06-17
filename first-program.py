@@ -12,7 +12,7 @@ class Teacher: #creating a class
     
     def give_assignment(self): #creating the behavior of a class
         print("complete the assignment")
-        print("Maintain silence in class")
+        
 
 
 class Math_Teacher(Teacher):
@@ -25,6 +25,9 @@ class Math_Teacher(Teacher):
         
     def get_strict(self):
         return self.__strict
+    
+    def give_assignment(self):
+        print("complete the formula")
     
     
 class English_teacher(Teacher):
@@ -53,3 +56,4 @@ English_Teacher1.give_assignment()
 print(English_Teacher1.get_name())
 print(Math_Teacher1.get_name())
 print(Math_Teacher1.get_strict())
+print(Math_Teacher1.give_assignment())
