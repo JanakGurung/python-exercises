@@ -1,6 +1,6 @@
 #TODO create a classs name Phone
 # with private attributes brand , model, model number, price, storage
-# create setter and getter for the price attributes
+# create setter and getter for the private attributes
 
 class Phone:
     def __init__(self, brand, model, price, storage, quantity):
@@ -40,3 +40,7 @@ class Phone:
     def get_quantity(self):
         return self.__quantity
 
+
+# phone = Phone("Apple", "15 pro", "Rs.98,000", "512 GB", "10")
+
+# print(phone.get_price())

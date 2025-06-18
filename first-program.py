@@ -6,7 +6,7 @@ class Teacher: #creating a class
     def set_name(self, name):
         self.__name = name
     
-    # using getter methods to get the values og private attributes
+    # using getter methods to get the values of private attributes
     def get_name(self):
         return self.__name 
     
