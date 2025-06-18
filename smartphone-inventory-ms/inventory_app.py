@@ -1,8 +1,7 @@
 from phone import Phone
 
 # TODO how do i implement my inventory?
-phone_inventory = [Phone("model", "brand", 22, "storage", 2)
-]
+phone_inventory = [Phone("model", "brand", 22, "storage", 2)]
 
 
 # TODO add a phone inventory
@@ -36,11 +35,20 @@ def view_phone_details():
 
 #TODO how to allow users to do the operations?
 #TODO how to let the useer use the program as musch as they want?
-#TODO how to let the user to use the program?
-print("Enter 1 to add phone: ")
-print("Enter 2 to view phone details: ")
-option = int(input("Choose an option: "))
-if(option == 1):
-    add_phone()
-elif(option == 2):
-    view_phone_details()
+#TODO how to let the user to exit the program?
+while(True):
+    print("Enter 1 to add phone: ")
+    print("Enter 2 to view phone details: ")
+    print("Enter 3 to update phone detail: ")
+    print("Enter 4 to remove a phone: ")
+    print("Enter 5 to exit: ")
+    option = int(input("Choose an option: "))
+    if(option == 1):
+        add_phone()
+    elif(option == 2):
+        view_phone_details()
+    elif(option == 5):
+        break
+    else:
+        print("Enter the options from (1 to 5): \n")
+        
