@@ -1,28 +1,46 @@
 from phone import Phone
 
 # TODO how do i implement my inventory?
-phone_inventory = []
+phone_inventory = [Phone("model", "brand", 22, "storage", 2)
+]
+
 
 # TODO add a phone inventory
-# TODO ask the phone details from user before adding the phone to inventory.
+# TODO ask the phone details from user before adding the phone to inventory
+#TODO need to handle exceeption
+def add_phone():
+    model= input("Enter the phone model:")
+    brand= input("Enter the phone brand:")
+    price= input("Enter the phone price:")
+    storage= input("Enter the phone storage:")
+    quantity= input("Enter the phone quantity:")
 
-phone = Phone("Samsung", "S20", 50000, "32 GB", 30)
-phone1 = Phone("Samsung", "S23", 70000, "32 GB", 30)
-phone_inventory.append(phone)
-phone_inventory.append(phone1)
+    phone = Phone(model, brand, price, storage, quantity)
 
-print(phone_inventory)
+
+    phone_inventory.append(phone)
+
+# print(phone_inventory)
 
 
 
 # TODO view details of a phone
 # TODO how do i show the information of the phone that the user wants.
-for phone in phone_inventory:
-    print(f"Phone Model: {phone.get_model()})
-    print(f"Phone Brand: {phone.get_brand()})
-
+def view_phone_details():
+    for phone in phone_inventory:
+        print(f"Phone Model: {phone.get_model()}")
+        print(f"Phone Brand: {phone.get_brand()}")
+    
 # TODO update detail of phone
 # TODO delete a phone
 
-# TODO how to allow users to do the operations?
- 
+#TODO how to allow users to do the operations?
+#TODO how to let the useer use the program as musch as they want?
+#TODO how to let the user to use the program?
+print("Enter 1 to add phone: ")
+print("Enter 2 to view phone details: ")
+option = int(input("Choose an option: "))
+if(option == 1):
+    add_phone()
+elif(option == 2):
+    view_phone_details()
