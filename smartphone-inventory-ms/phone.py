@@ -3,7 +3,7 @@
 # create setter and getter for the private attributes
 
 class Phone:
-    def __init__(self, brand:str, model:str, price:int, storage:str, quantity:int):
+    def __init__(self, model:str, brand:str, price:int, storage:str, quantity:int):
         self.__brand= brand
         self.__model = model
         self.__price = price

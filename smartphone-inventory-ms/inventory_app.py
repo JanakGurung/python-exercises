@@ -1,7 +1,7 @@
 from phone import Phone
 
 # TODO how do i implement my inventory?
-phone_inventory = [Phone("brand", "model", 223, "storage", 23),
+phone_inventory = [Phone("model", "brand", 223, "storage", 23),
                     Phone("test1", "testbrand1", 22223, "teststorage1", 523),
                     Phone("test2", "testbrand2", 22355, "teststorage2", 223)]
 
@@ -55,7 +55,15 @@ def update_phone_details():
    
 #TODO delete a phone
 def delete_phone():
-    pass
+    model_number_to_delete = input("Enter the phone model to delete: ")
+    for phone in phone_inventory:
+        if model_number_to_delete == phone.get_model:
+            phone_inventory.remove(phone)
+            print(f"{model_number_to_delete} has been removed from the records....\n")
+            return
+        else:
+            print(f"{model_number_to_delete} not found in the records ... \n")
+            return
 
 #TODO how to allow users to do the operations?
 #TODO how to let the useer use the program as musch as they want?
