@@ -23,7 +23,7 @@ def add_phone():
 
 # print(phone_inventory)
 
-
+#these are changes from feature branch
 
 # TODO view details of a phone
 # TODO how do i show the information of the phone that the user wants.
