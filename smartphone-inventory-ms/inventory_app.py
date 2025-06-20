@@ -1,9 +1,9 @@
 from phone import Phone
 
 # TODO how do i implement my inventory?
-phone_inventory = [Phone("brand", "model", 223, "storage", 23),
-                    Phone("test1", "testbrand1", 22223, "teststorage1", 523),
-                    Phone("test2", "testbrand2", 22355, "teststorage2", 223)]
+phone_inventory = [Phone("Pixel 8", "Google", 45000, "16 GB", 23),
+                    Phone("Iphone 12", "Apple", 120000, "16 GB", 523),
+                    Phone("te", "testbrand2", 22355, "teststorage2", 223)]
 
 # TODO add a phone inventory
 # TODO ask the phone details from user before adding the phone to inventory
@@ -28,14 +28,14 @@ def add_phone():
 # TODO view details of a phone
 # TODO how do i show the information of the phone that the user wants.
 def view_phone_details():
+    i = 1
+    print("-----------------------------------") #customizing the view
+    print("| Phone Model   |  Brand  | Storage  |  Price  |  Quantity")
     for phone in phone_inventory:
-        print(f"Phone Model: {phone.get_model()}")
-        print(f"Phone Brand: {phone.get_brand()}")
-        print(f"Phone storage: {phone.get_storage()}")
-        print(f"Phone price: {phone.get_price()}")
-        print(f"Phone quantity: {phone.get_quantity()}")
-        print(f"\n")
-    
+        print(f"| {i} |{phone.get_model()} |  {phone.get_brand()} | {phone.get_storage()} | {phone.get_price()} | {phone.get_quantity()}")
+        i = i+1
+
+
 # TODO update detail of phone
 def update_phone_details():
     model_number_to_update = input("Enter the phone model number: ")
@@ -75,20 +75,25 @@ def menu():
         print("Enter 3 to update phone detail: ")
         print("Enter 4 to remove a phone: ")
         print("Enter 5 to exit: ")
-        option = int(input("Choose an option: "))
-        if(option == 1):
-            add_phone()
-        elif(option == 2):
-            view_phone_details()
-        elif(option == 3):
-            update_phone_details()
-        elif(option == 4):
-            delete_phone()
-        elif(option == 5):
-            print("Thank you, See You Again!!")
-            break
-        else:
-            print("Enter the options from (1 to 5): \n")
+        try:
+            option = int(input("Choose an option: "))
+            if(option == 1):
+                add_phone()
+            elif(option == 2):
+                view_phone_details()
+            elif(option == 3):
+                update_phone_details()
+            elif(option == 4):
+                delete_phone()
+            elif(option == 5):
+                print("Thank you, See You Again!!")
+                break
+            else:
+                print("Enter the options from (1 to 5): \n")
+        except ValueError:
+            print("Invalid Entry!!! Enter from 1 to 5 ..") #exceeption handling
+        except:
+            print("Cannot perform the action!!")
         
 if __name__ == '__main__': #to execute the file only when used when a module is imported to another module, then the python interpretor will assign the string with the name of the module  to the special variabole name.
     menu()
