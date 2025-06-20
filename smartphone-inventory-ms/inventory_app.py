@@ -23,7 +23,9 @@ def add_phone():
 
 # print(phone_inventory)
 
-#these are changes from main branch
+
+#these are changes from main branch and feature branch but merged together
+
 
 # TODO view details of a phone
 # TODO how do i show the information of the phone that the user wants.
