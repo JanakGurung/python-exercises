@@ -1,5 +1,6 @@
 from student import Student
 
+student_management = [Student("Alice", 101, 10, 9812345678, "alice@gmail.com")]
 
 
 def add_student():
