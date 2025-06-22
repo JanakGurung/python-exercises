@@ -1,5 +1,5 @@
 class Student:
-    def __init__(self, full_name, roll_number, grade, phone_number, email_address):
+    def __init__(self, full_name: str, roll_number: int, grade: int, phone_number: int, email_address: str):
         self.__full_name = full_name
         self.__roll_number = roll_number
         self.__grade = grade
@@ -35,4 +35,5 @@ class Student:
     
     def get_email_address(self):
         return self.__email_address
+
         
