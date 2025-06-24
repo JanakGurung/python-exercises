@@ -1,9 +1,24 @@
 from phone import Phone
+import json
+from pathlib import Path
 
 # TODO how do i implement my inventory?
 phone_inventory = [Phone("Pixel 8", "Google", 45000, "16 GB", 23),
                     Phone("Iphone 12", "Apple", 120000, "16 GB", 523),
                     Phone("te", "testbrand2", 22355, "teststorage2", 223)]
+
+DATA_FILE = Path("phone_inventory.json")
+
+def load_inventory():
+    with DATA_FILE.open("r") as f:
+        data = json.load(f)
+        return[Phone.from_dict(item)for item in data]
+            
+            
+
+def save_inventory(phone_inventory):
+    with DATA_FILE.open("w") as f:
+        json.dump([phone.to_dict() for phone in phone_inventory],f, indent = 4)
 
 # TODO add a phone inventory
 # TODO ask the phone details from user before adding the phone to inventory
@@ -20,6 +35,9 @@ def add_phone():
 
 
     phone_inventory.append(phone)
+    
+    with DATA_FILE.open("w") as f:
+        json.dump(phone_inventory)
 
 # print(phone_inventory)
 
