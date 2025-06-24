@@ -1,20 +1,36 @@
 from student import Student
 
-student_management = [Student("Alice", 101, 10, 9812345678, "alice@gmail.com"),
-                      Student("Scott", 102, 9, 9870987652, "scott@gmail.com"),
+student_management = [Student("Alice", 101, 10, 9812345678,"alice@gmail.com"),
+                        Student("Scott", 102, 9, 9870987652, "scott@gmail.com"),
                       Student("Chris", 103, 10, 9876512341, "chris@yahoo.com")]
 
 #add studnet
 def add_student():
-    full_name = input("Enter name: ")
-    roll_number = input("Enter Roll number: ")
-    grade = input("Enter grade: ")
-    phone_number = input("Enter phone number: ")
-    email_address = input("Enter email address: ")
+    while True:
+        full_name = input("Enter name: ")
+        if full_name:
+            break
+        else:
+            print("Name cannot be empty.")
+        
+    while True:
+        roll_number = int(input("Enter Roll number: "))
+        if roll_number:
+            print(f"{roll_number}")
+            break
+        else:
+            print("Invalid Roll number. Enter an integer.")
+        
+        
+            
+        grade = input("Enter grade: ")
+        phone_number = input("Enter phone number: ")
+        email_address = input("Enter email address: ")
     
     student = Student(full_name, roll_number, grade, phone_number, email_address)
     
-    student_management.append()
+    student_management.append(student)
+    print("Student added successfully.")
     
 # view student details
 def view_students():
@@ -29,25 +45,24 @@ def view_students():
 
 #update student       
 def update_student_grade():
-    student_to_update = input("Enter the roll no. : ")
+    student_to_update = int(input("Enter the roll no. : "))
     for student in student_management:    
-        if student_to_update == student.get_roll_no():
-            new_roll_number = input("Enter new roll number: ")
-            new_grade= input("Enter new grade: ")
-            student.set_roll_number()
-            student.set_grade()
-            print(f"{student_to_update} has been updated.")
+        if student_to_update == student.get_roll_number():
+            new_roll_number = int(input("Enter new roll number: "))
+            new_grade= int(input("Enter new grade: "))
+            student.set_roll_number(new_roll_number)
+            student.set_grade(new_grade)
+            print(f"Student updated successfully.")
             return
-        else:
-            print(f"{student_to_update} not found in records.")
+    print(f"{student_to_update} not found in records...\n")
             
 # delete student
 def delete_student():
-    student_to_delete = input("Enter the Roll: ")
+    student_to_delete = int(input("Enter the Roll: "))
     for student in student_management:
-        if student_to_delete == Student.get_roll_number:
+        if student_to_delete == student.get_roll_number():
             student_management.remove(student)
-            print("{student_to_delete} has been deleted from records...\n")
+            print("Student deleted successfully.  \n")
         return
     print(f"{student_to_delete} not found in records...\n")
 
@@ -67,15 +82,12 @@ def menu():
         option = int(input("Choose an option: "))
         if (option == 1):
             add_student()
-            print("Student added successfully.")
         elif (option == 2):
             view_students()
         elif (option == 3):
             update_student_grade()
-            print("Student updated successfully.")
         elif (option == 4):
             delete_student()
-            print("Student deleted successfully.")
         elif (option == 5):
             print("Application terminates gracefully.")
             break

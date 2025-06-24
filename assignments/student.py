@@ -7,19 +7,19 @@ class Student:
         self.__email_address = email_address
         
     def set_full_name(self, full_name):
-        self.full_name = full_name
+        self.__full_name = full_name
         
     def set_roll_number(self, roll_number):
-        self.roll_number = roll_number
+        self.__roll_number = roll_number
     
     def set_grade(self, grade):
-        self.grade = grade
+        self.__grade = grade
     
     def set_phone_number(self, phone_number):
-        self.phone_number = phone_number
+        self.__phone_number = phone_number
     
     def set_email_address(self, email_address):
-        self.email_address = email_address
+        self.__email_address = email_address
         
     def get_full_name(self):
         return self.__full_name
